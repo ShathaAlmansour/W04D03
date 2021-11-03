@@ -7,19 +7,16 @@ const Card = () => {
     const cards = [
         {
             id: 0,
-            name: "HafrAlbaten",
             img: "",
             isFav: false,
           },
           {
             id: 1,
-            name: "Alqassim",
             img: "",
             isFav: false,
           },
           {
             id: 2,
-            name: "Swiss",
             img: "",
             isFav: false,
           },
