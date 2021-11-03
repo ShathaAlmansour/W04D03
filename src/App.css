@@ -44,7 +44,7 @@
 }
 
 .nav ul {
-  background-color:pink;
+  background-color:grey;
   padding: 2rem;
 }
 
@@ -62,3 +62,10 @@ a:hover {
   color: white;
   font-size: 30px;
 }
+.cards{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+

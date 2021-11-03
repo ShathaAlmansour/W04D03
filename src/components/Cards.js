@@ -6,13 +6,11 @@ const Cards = () => {
     {
       id: 0,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL7giCmepgviTv1ZD6bL8aGjGrVxPCoR0ZYA&usqp=CAU",
-      name: "Makkah",
       isFav: false,
     },
     {
       id: 1,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL7giCmepgviTv1ZD6bL8aGjGrVxPCoR0ZYA&usqp=CAU",
-      name: "Qassim",
       isFav: false,
     },
     {
