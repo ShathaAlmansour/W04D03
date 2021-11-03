@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.nav ul li{
+  display: inline-block;
+  margin-left: 200px;
+}
+
+.nav ul {
+  background-color:pink;
+  padding: 2rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: black;
+}
+
+.icon {
+  color: white;
+  font-size: 30px;
+}

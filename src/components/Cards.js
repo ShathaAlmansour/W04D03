@@ -1,88 +1,77 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import qassim from "../Image/qassim.jpg";
-import Riyadh from "../Image/Riyadh.jpg";
-import Makkah from "../Image/Makkah.jpg";
+import React from "react";
+import { useState } from "react";
 
 const Cards = () => {
-  const [search, setSearch] = useState("");
-  const history = useHistory();
   const [cards] = useState([
     {
       id: 0,
-      name: "Qassim",
-      img: "",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL7giCmepgviTv1ZD6bL8aGjGrVxPCoR0ZYA&usqp=CAU",
+      name: "Makkah",
       isFav: false,
     },
     {
       id: 1,
-      name: "Riyadh",
-      img: "",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL7giCmepgviTv1ZD6bL8aGjGrVxPCoR0ZYA&usqp=CAU",
+      name: "Qassim",
       isFav: false,
-
     },
     {
       id: 2,
-      name: "Makkah",
-      img: "",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL7giCmepgviTv1ZD6bL8aGjGrVxPCoR0ZYA&usqp=CAU",
       isFav: false,
-
     },
   ]);
 
-const addFavurite = (id) => {
-    let val = cards[id];
-    if (val.isFav === true) {
-        val.isFav = false;
-      alert("Remove from favorite")
-    } else {
-      val.isFav = true;
-      alert("Add to favorite")
+  const favorite = (id) => {
+    let arrFav = [];
+    arrFav = cards.map((item) => {
+      if (item.id === id) {
+        return { ...item, isFav: !item.isFav };
+      } else {
+        return item;
+      }
+    });
 
-
-      let fav = cards.filter((cards) => cards.isFav);
-      localStorage.setItem("fav",JSON.stringify(fav))
-    }
-}
-
-const changePath = (id) => {
-    history.push(`/card/${id}`)
-}
+    // localStorage.setItem("arrFav", JSON.stringify(arrFav));
+    // favRender();
+  };
 
   return (
-  <div>
-      <input
+    <div>
+      {/* <input
         type="search"
-        placeholder="Search here"
         onChange={(event) => {
-            setSearch(event.target.value);
+          setSearch(event.target.value);
         }}
       />
-      <ul className="cardsL">
-      {cards.filter((val) => {
-            if (search === "") {
-              return val;
-            } else if (
-              val.name.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return val;
-            }
-          })
-          
-          .map((item, i) => ( // map for object
-          <div className="cards">
-              <li className="card" key={i} >
-                  <div onClick={() => changePath(item.id)}>
-            <h2>{item.name}</h2>
-            <img src= {item.img} alt='CuntriesImg' /> 
-          </div>
-          <button className='btn' onClick={() => addFavurite(item.id)}>Favorite</button>
-          </li>
-          </div>
-        ))}
-        </ul>
+      {
+        (cards.filter((val) => {
+          if (search === "") {
+            return val;
+          } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+            return val;
+          }
+        }),
+        ( */}
+      <div className="cards">
+        {cards.map((item, id) => {
+          return (
+            <div className="card">
+              <img src={item.img} alt="skyPhotos" />
+              <h2>{item.name}</h2>
+              <button className="favBtn" onClick={() => favorite((item, id))}>
+                Add to Favorite
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      ))
+      {/* } */}
     </div>
   );
 };
 
 export default Cards;
+
+
