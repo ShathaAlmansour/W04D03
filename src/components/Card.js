@@ -26,7 +26,7 @@ const Card = () => {
         ];
     
     let id = useParams().id;
-    const myItem = cards.find((item, id) => Number(id) === id ); // حولتها لنمبر Number
+    const myItem = cards.find((item, id) => Number(id) === id ); 
 
     return (
    <div className="cardCoun">
